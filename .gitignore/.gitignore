@@ -27,3 +27,7 @@ target/
 
 ### VS Code ###
 ".gitignore" 30L, 320C
+
+/node_modules/
+package-lock.json
+.env

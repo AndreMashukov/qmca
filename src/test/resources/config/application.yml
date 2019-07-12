@@ -15,10 +15,10 @@
 
 spring:
   application:
-    name: mca
+    name: qmca
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:mca;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MULTI_THREADED=FALSE
+    url: jdbc:h2:mem:qmca;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MULTI_THREADED=FALSE
     name:
     username:
     password:
@@ -55,13 +55,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: mca-task-
+      thread-name-prefix: qmca-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: mca-scheduling-
+      thread-name-prefix: qmca-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -79,7 +79,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'mcaApp'
+    name: 'qmcaApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -96,7 +96,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: OTRmYjQ3ODk0MThkMzY5NTNmMTE3OWQ3YTZlYWJmMzcyMWY3YmE1Y2JiYmUwNGJkMjFiMWMwZWYwNDkwMGQ5M2VjNWQzNjkyYmE1YjBiMjIzYzE4ZTg4NDViMjcyZThkYzBmMzlhOWM0YzgxYmIyZTEyNzA5MGM3MDRjZDhkMmE=
+        base64-secret: YWEyM2ZkZTBkNTI4NzE1MmYwZWRhYzc5ZjA1ZGM5MWU2YzEzMmE1NzU2MDA1ZTViN2UzZWQ0MDhiMmM0ZmY2NDFmYmQ1MTkzMWU0OGVkMmQyOGUyMmY2MDk0ZjYzNTAwMjcxY2I1Yjg2MWQxOGU2NTQ1MzZiYzcyN2YyYTAzOTg=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:

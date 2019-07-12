@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { Observable, throwError } from 'rxjs';
 
-import { McaTestModule } from '../../../test.module';
+import { QmcaTestModule } from '../../../test.module';
 import { AccountService, Account } from 'app/core';
 import { SettingsComponent } from 'app/account/settings/settings.component';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [McaTestModule],
+        imports: [QmcaTestModule],
         declarations: [SettingsComponent],
         providers: [FormBuilder]
       })

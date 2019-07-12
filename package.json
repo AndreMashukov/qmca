@@ -1,7 +1,7 @@
 {
-  "name": "mca",
+  "name": "qmca",
   "version": "0.0.0",
-  "description": "Description for mca",
+  "description": "Description for qmca",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [
@@ -88,8 +88,7 @@
     "webpack-notifier": "1.7.0",
     "webpack-visualizer-plugin": "0.1.11",
     "workbox-webpack-plugin": "4.3.1",
-    "write-file-webpack-plugin": "4.5.0",
-    "xml2js": "0.4.19"
+    "write-file-webpack-plugin": "4.5.0"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -105,8 +104,8 @@
     "lint": "tslint --project tsconfig.json -e 'node_modules/**'",
     "lint:fix": "npm run lint -- --fix",
     "ngc": "ngc -p tsconfig-aot.json",
-    "cleanup": "rimraf target/classes/static/ target/classes/aot",
-    "clean-www": "rimraf target/classes/static/app/{src,target/}",
+    "cleanup": "rimraf build/resources/main/static/ build/resources/main/aot",
+    "clean-www": "rimraf build/resources/main/static/app/{src,build/}",
     "start": "npm run webpack:dev",
     "start-tls": "npm run webpack:dev -- --env.tls",
     "serve": "npm run start",
@@ -124,7 +123,7 @@
     "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js"
   },
   "jestSonar": {
-    "reportPath": "target/test-results/jest",
+    "reportPath": "build/test-results/jest",
     "reportFile": "TESTS-results-sonar.xml"
   }
 }

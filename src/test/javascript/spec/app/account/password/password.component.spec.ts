@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { Observable, of, throwError } from 'rxjs';
 
-import { McaTestModule } from '../../../test.module';
+import { QmcaTestModule } from '../../../test.module';
 import { PasswordComponent } from 'app/account/password/password.component';
 import { PasswordService } from 'app/account/password/password.service';
 
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [McaTestModule],
+        imports: [QmcaTestModule],
         declarations: [PasswordComponent],
         providers: [FormBuilder]
       })

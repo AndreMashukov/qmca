@@ -4,7 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
-import { McaTestModule } from '../../../test.module';
+import { QmcaTestModule } from '../../../test.module';
 import { UserMgmtUpdateComponent } from 'app/admin/user-management/user-management-update.component';
 import { UserService, User } from 'app/core';
 
@@ -19,7 +19,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [McaTestModule],
+        imports: [QmcaTestModule],
         declarations: [UserMgmtUpdateComponent],
         providers: [
           FormBuilder,

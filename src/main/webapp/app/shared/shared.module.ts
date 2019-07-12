@@ -1,17 +1,17 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { McaSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
+import { QmcaSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
 
 @NgModule({
-  imports: [McaSharedCommonModule],
+  imports: [QmcaSharedCommonModule],
   declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [JhiLoginModalComponent],
-  exports: [McaSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
+  exports: [QmcaSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class McaSharedModule {
+export class QmcaSharedModule {
   static forRoot() {
     return {
-      ngModule: McaSharedModule
+      ngModule: QmcaSharedModule
     };
   }
 }

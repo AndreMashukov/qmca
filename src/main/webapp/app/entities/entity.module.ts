@@ -4,10 +4,6 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      {
-        path: 'calibration',
-        loadChildren: './calibration/calibration.module#McaCalibrationModule'
-      }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])
   ],
@@ -16,4 +12,4 @@ import { RouterModule } from '@angular/router';
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class McaEntityModule {}
+export class QmcaEntityModule {}

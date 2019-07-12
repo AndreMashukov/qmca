@@ -21,7 +21,7 @@ import { NgbDateMomentAdapter } from 'app/shared/util/datepicker-adapter';
     DatePipe
   ]
 })
-export class McaCoreModule {
+export class QmcaCoreModule {
   constructor() {
     registerLocaleData(locale);
   }

@@ -16,7 +16,7 @@
 logging:
   level:
     ROOT: INFO
-    com.mca.mca7: INFO
+    com.mca.nick: INFO
     io.github.jhipster: INFO
 
 management:
@@ -33,15 +33,20 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/mca
-    username: mca
+    url: jdbc:mysql://localhost:3306/qmca?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
     password:
     hikari:
       poolName: Hikari
       auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
   jpa:
-    database-platform: io.github.jhipster.domain.util.FixedPostgreSQL95Dialect
-    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
     show-sql: false
     properties:
       hibernate.id.new_generator_mappings: true
@@ -62,7 +67,7 @@ spring:
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
-# keytool -genkey -alias mca -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias qmca -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm
@@ -75,7 +80,7 @@ spring:
 #        key-store: classpath:config/tls/keystore.p12
 #        key-store-password: password
 #        key-store-type: PKCS12
-#        key-alias: mca
+#        key-alias: qmca
 #        # The ciphers suite enforce the security by deactivating some old and deprecated SSL cipher, this list was tested against SSL Labs (https://www.ssllabs.com/ssltest/)
 #        ciphers: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 ,TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_DHE_RSA_WITH_AES_128_CBC_SHA256,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA256,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA,TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
 # ===================================================================
@@ -96,10 +101,6 @@ jhipster:
   http:
     cache: # Used by the CachingHttpHeadersFilter
       timeToLiveInDays: 1461
-  cache: # Cache configuration
-    ehcache: # Ehcache configuration
-      time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
-      max-entries: 1000 # Number of objects in each cache entry
   security:
     authentication:
       jwt:
@@ -108,12 +109,12 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: OTRmYjQ3ODk0MThkMzY5NTNmMTE3OWQ3YTZlYWJmMzcyMWY3YmE1Y2JiYmUwNGJkMjFiMWMwZWYwNDkwMGQ5M2VjNWQzNjkyYmE1YjBiMjIzYzE4ZTg4NDViMjcyZThkYzBmMzlhOWM0YzgxYmIyZTEyNzA5MGM3MDRjZDhkMmE=
+        base64-secret: YWEyM2ZkZTBkNTI4NzE1MmYwZWRhYzc5ZjA1ZGM5MWU2YzEzMmE1NzU2MDA1ZTViN2UzZWQ0MDhiMmM0ZmY2NDFmYmQ1MTkzMWU0OGVkMmQyOGUyMmY2MDk0ZjYzNTAwMjcxY2I1Yjg2MWQxOGU2NTQ1MzZiYzcyN2YyYTAzOTg=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    from: mca@localhost
+    from: qmca@localhost
     base-url: http://my-server-url-to-change # Modify according to your server's URL
   metrics:
     logs: # Reports metrics in the logs

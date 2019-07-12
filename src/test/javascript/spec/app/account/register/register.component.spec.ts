@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async, inject, tick, fakeAsync } from '@angu
 import { FormBuilder } from '@angular/forms';
 import { Observable, of, throwError } from 'rxjs';
 
-import { McaTestModule } from '../../../test.module';
+import { QmcaTestModule } from '../../../test.module';
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { Register } from 'app/account/register/register.service';
 import { RegisterComponent } from 'app/account/register/register.component';
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [McaTestModule],
+        imports: [QmcaTestModule],
         declarations: [RegisterComponent],
         providers: [FormBuilder]
       })

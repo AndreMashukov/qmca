@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { McaSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
+import { QmcaSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
 
 @NgModule({
-  imports: [McaSharedLibsModule],
+  imports: [QmcaSharedLibsModule],
   declarations: [JhiAlertComponent, JhiAlertErrorComponent],
-  exports: [McaSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
+  exports: [QmcaSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
 })
-export class McaSharedCommonModule {}
+export class QmcaSharedCommonModule {}

@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.mca.nick"
+    },
+    "jhipsterVersion": "6.1.0",
+    "applicationType": "monolith",
+    "baseName": "qmca",
+    "packageName": "com.mca.nick",
+    "packageFolder": "com/mca/nick",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YWEyM2ZkZTBkNTI4NzE1MmYwZWRhYzc5ZjA1ZGM5MWU2YzEzMmE1NzU2MDA1ZTViN2UzZWQ0MDhiMmM0ZmY2NDFmYmQ1MTkzMWU0OGVkMmQyOGUyMmY2MDk0ZjYzNTAwMjcxY2I1Yjg2MWQxOGU2NTQ1MzZiYzcyN2YyYTAzOTg=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "materia",
+    "clientThemeVariant": "dark",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}

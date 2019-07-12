@@ -11,12 +11,12 @@ import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { McaSharedModule } from 'app/shared';
-import { McaCoreModule } from 'app/core';
-import { McaAppRoutingModule } from './app-routing.module';
-import { McaHomeModule } from './home/home.module';
-import { McaAccountModule } from './account/account.module';
-import { McaEntityModule } from './entities/entity.module';
+import { QmcaSharedModule } from 'app/shared';
+import { QmcaCoreModule } from 'app/core';
+import { QmcaAppRoutingModule } from './app-routing.module';
+import { QmcaHomeModule } from './home/home.module';
+import { QmcaAccountModule } from './account/account.module';
+import { QmcaEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
@@ -30,13 +30,13 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
       alertAsToast: false,
       alertTimeout: 5000
     }),
-    McaSharedModule.forRoot(),
-    McaCoreModule,
-    McaHomeModule,
-    McaAccountModule,
+    QmcaSharedModule.forRoot(),
+    QmcaCoreModule,
+    QmcaHomeModule,
+    QmcaAccountModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    McaEntityModule,
-    McaAppRoutingModule
+    QmcaEntityModule,
+    QmcaAppRoutingModule
   ],
   declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
   providers: [
@@ -63,7 +63,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
   ],
   bootstrap: [JhiMainComponent]
 })
-export class McaAppModule {
+export class QmcaAppModule {
   constructor(private dpConfig: NgbDatepickerConfig) {
     this.dpConfig.minDate = { year: moment().year() - 100, month: 1, day: 1 };
   }

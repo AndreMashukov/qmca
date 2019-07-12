@@ -1,7 +1,7 @@
 module.exports = {
     preset: 'jest-preset-angular',
     setupFilesAfterEnv: ['<rootDir>/src/test/javascript/jest.ts'],
-    coverageDirectory: '<rootDir>/target/test-results/',
+    coverageDirectory: '<rootDir>/build/test-results/',
     globals: {
         'ts-jest': {
             stringifyContentPathRegex: '\\.html$',
@@ -17,7 +17,7 @@ module.exports = {
     },
     reporters: [
         'default',
-        [ 'jest-junit', { output: './target/test-results/TESTS-results-jest.xml' } ]
+        [ 'jest-junit', { output: './build/test-results/TESTS-results-jest.xml' } ]
     ],
     testResultsProcessor: 'jest-sonar-reporter',
     transformIgnorePatterns: ['node_modules/(?!@angular/common/locales)'],

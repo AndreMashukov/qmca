@@ -3,14 +3,14 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mca": {
+    "qmca": {
       "root": "",
       "sourceRoot": "src/main/webapp",
       "projectType": "application",
       "architect": {}
     }
   },
-  "defaultProject": "mca",
+  "defaultProject": "qmca",
   "cli": {
     "packageManager": "npm"
   },

@@ -1,16 +1,16 @@
 version: '2'
 services:
-  mca-app:
-    image: mca
+  qmca-app:
+    image: qmca
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://mca-postgresql:5432/mca
+      - SPRING_DATASOURCE_URL=jdbc:mysql://qmca-mysql:3306/qmca?useUnicode=true&characterEncoding=utf8&useSSL=false
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     ports:
       - 8080:8080
-  mca-postgresql:
+  qmca-mysql:
     extends:
-      file: postgresql.yml
-      service: mca-postgresql
+      file: mysql.yml
+      service: qmca-mysql

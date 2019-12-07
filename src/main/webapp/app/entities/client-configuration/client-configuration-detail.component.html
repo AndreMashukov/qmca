@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="clientConfiguration">
+            <h2><span>Client Configuration</span> {{clientConfiguration.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Client Id</span></dt>
+                <dd>
+                    <span>{{clientConfiguration.clientId}}</span>
+                </dd>
+                <dt><span>Attachment</span></dt>
+                <dd>
+                    <span>{{clientConfiguration.attachment}}</span>
+                </dd>
+                <dt><span>Pre Table Notification Template</span></dt>
+                <dd>
+                    <span>{{clientConfiguration.preTableNotificationTemplate}}</span>
+                </dd>
+                <dt><span>Post Table Template</span></dt>
+                <dd>
+                    <span>{{clientConfiguration.postTableTemplate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/client-configuration', clientConfiguration.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

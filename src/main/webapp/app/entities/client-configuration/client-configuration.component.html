@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span>Client Configurations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-client-configuration" [routerLink]="['/client-configuration/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Client Configuration
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="clientConfigurations?.length === 0">
+        <span>No clientConfigurations found</span>
+    </div>
+    <div class="table-responsive" *ngIf="clientConfigurations?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="clientId"><span>Client Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="attachment"><span>Attachment</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="preTableNotificationTemplate"><span>Pre Table Notification Template</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="postTableTemplate"><span>Post Table Template</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let clientConfiguration of clientConfigurations ;trackBy: trackId">
+                <td><a [routerLink]="['/client-configuration', clientConfiguration.id, 'view' ]">{{clientConfiguration.id}}</a></td>
+                <td>{{clientConfiguration.clientId}}</td>
+                <td>{{clientConfiguration.attachment}}</td>
+                <td>{{clientConfiguration.preTableNotificationTemplate}}</td>
+                <td>{{clientConfiguration.postTableTemplate}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/client-configuration', clientConfiguration.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/client-configuration', clientConfiguration.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'client-configuration', { outlets: { popup: clientConfiguration.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
